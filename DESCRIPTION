@@ -1,0 +1,13 @@
+Package: genotypetools
+Title: R package to aid sanger sequencing based genotyping
+Version: 0.2
+Authors@R: person("Moritz", "Lindner", email = "lindnerm@uni-bonn.de", role = c("aut", "cre"))
+Description: R package to aid sanger sequencing based genotyping.
+Depends: R (>= 3.5.1)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    sangerseqR,
+    stringr,
+RoxygenNote: 6.1.1.9000
