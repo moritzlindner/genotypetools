@@ -1,12 +1,12 @@
 #' A function to extractg the genotpe based on ab1 files
 #'
 #' This function retrieves ab1 files either from a link or from a directory and compares the sequence to .
-#' @param litter_list A list of litter names 
+#' @param litter_list A list of litter names
 #' @param size_list Corresponding list with number of pubs
 #' @param alpha Make alphabetic instead of numeric idenfiers
+#' @examples
+#'#' identifiers<-makegenotypeidentifiers(c("KCAW4.4","KCAW5.2"),c(8,16),alpha=TRUE)
 #' @export
-#' 
-
 makegenotypeidentifiers<-function(litter_list,size_list,alpha=TRUE){
   out<-list()
   if (length(litter_list)==length(size_list)){
