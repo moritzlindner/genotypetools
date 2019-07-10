@@ -16,3 +16,6 @@ makegenotypeidentifiers(litter_list, size_list, alpha = TRUE)
 \description{
 This function retrieves ab1 files either from a link or from a directory and compares the sequence to .
 }
+\examples{
+#' identifiers<-makegenotypeidentifiers(c("KCAW4.4","KCAW5.2"),c(8,16),alpha=TRUE)
+}

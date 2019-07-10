@@ -11,11 +11,13 @@
 #' @return Data Frame with list of mice and respective genotypes
 #' @examples
 #' sangergenotype(dir="D:\\", link="http://www..zip",wtseq="ACTG",mutseq="ACTG", revcomp = TRUE, cutoff = 0.2)
+#' @import sangerseqR
+#' @import stringr
 #' @export
 sangergenotype<-function (dir = choose.dir(), link = "", wtseq = "", mutseq = "",
                           revcomp = TRUE, cutoff = 0.33, separator = "_") {
-  #require("sangerseqR")
-  #require("stringr")
+  require("sangerseqR")
+  require("stringr")
   if (revcomp == TRUE) {
     wt <- toString(Biostrings::reverseComplement(Biostrings::DNAString(wtseq)))
     mut <- toString(Biostrings::reverseComplement(Biostrings::DNAString(mutseq)))

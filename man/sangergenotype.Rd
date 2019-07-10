@@ -22,6 +22,12 @@ sangergenotype(dir = choose.dir(), link = "", wtseq = "",
 
 \item{separator}{A separator char or string by which the ab1 filenames should be split and analyzed in order to identify unique strings (e.g. mouse identifiers)}
 }
+\value{
+Data Frame with list of mice and respective genotypes
+}
 \description{
 This function retrieves ab1 files either from a link or from a directory and compares the sequence to .
+}
+\examples{
+sangergenotype(dir="D:\\\\", link="http://www..zip",wtseq="ACTG",mutseq="ACTG", revcomp = TRUE, cutoff = 0.2)
 }

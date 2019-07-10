@@ -2,3 +2,5 @@
 
 export(makegenotypeidentifiers)
 export(sangergenotype)
+import(sangerseqR)
+import(stringr)
