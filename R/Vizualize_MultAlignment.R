@@ -16,8 +16,10 @@
 #' @export
 Vizualize_MultAlignment<-function(AAS,restrict_to=FALSE,restrict_by,sortbyIdentity=TRUE,DistanceMatrix=NULL,ROI=NULL){
   AAS<-msa::msa(AAS)
-  AAS<-methods::as(AAS,"DNAMultipleAlignment")
-  AAS<-AAMultipleAlignment_to_df(AAS)
+ # require(msa)
+  AAS<-DNAMultipleAlignment(AAS)
+  #AAS<-methods::as(AAS,"DNAMultipleAlignment")
+  AAS<-DNAMultipleAlignment_to_df(AAS)
   if(restrict_to=="Sequence"){
     AAS<-AAS[,min(which(AAS[restrict_by,]!="-")):max(which(AAS[restrict_by,]!="-"))]
   }

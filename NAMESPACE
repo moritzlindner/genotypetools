@@ -2,6 +2,7 @@
 
 export(AAMultipleAlignment_to_df)
 export(Ab1Plot)
+export(DNAMultipleAlignment_to_df)
 export(Vizualize_MultAlignment)
 export(addROItoGraph)
 export(makegenotypeidentifiers)
@@ -18,3 +19,4 @@ import(sangerseqR)
 import(stringr)
 import(utils)
 importFrom(Biostrings,AAStringSet)
+importFrom(Biostrings,DNAStringSet)
