@@ -11,4 +11,12 @@ biocViews:
 Imports: 
     sangerseqR,
     stringr,
+    Biostrings,
+    ggplot2,
+    tidyr,
+    grid,
+    BiocGenerics,
+    ggpubr,
+    msa,
+    IRanges
 RoxygenNote: 7.1.1
