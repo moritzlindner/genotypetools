@@ -2,7 +2,7 @@
 % Please edit documentation in R/DNAMultipleAlignment_to_df.R
 \name{DNAMultipleAlignment_to_df}
 \alias{DNAMultipleAlignment_to_df}
-\title{DNAMultipleAlignment_to_df}
+\title{DNAMultipleAlignment_to_df (TESTING)}
 \usage{
 DNAMultipleAlignment_to_df(DNAS_align)
 }

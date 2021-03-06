@@ -2,7 +2,7 @@
 % Please edit documentation in R/makegenotypeidentifiers.R
 \name{makegenotypeidentifiers}
 \alias{makegenotypeidentifiers}
-\title{A function to extractg the genotpe based on ab1 files}
+\title{A function to extract the genotype based on ab1 files}
 \usage{
 makegenotypeidentifiers(litter_list, size_list, alpha = TRUE)
 }
@@ -11,11 +11,11 @@ makegenotypeidentifiers(litter_list, size_list, alpha = TRUE)
 
 \item{size_list}{Corresponding list with number of pubs}
 
-\item{alpha}{Make alphabetic instead of numeric idenfiers}
+\item{alpha}{Make alphabetic instead of numeric identifiers}
 }
 \description{
 This function retrieves ab1 files either from a link or from a directory and compares the sequence to .
 }
 \examples{
-#' identifiers<-makegenotypeidentifiers(c("KCAW4.4","KCAW5.2"),c(8,16),alpha=TRUE)
+identifiers<-makegenotypeidentifiers(c("KCAW4.4","KCAW5.2"),c(8,16),alpha=TRUE)
 }

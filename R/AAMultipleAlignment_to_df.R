@@ -1,4 +1,4 @@
-#' AAMultipleAlignment_to_df
+#' AAMultipleAlignment_to_df (TESTING)
 #'
 #' This function is designed to convert Multiple Alignments of the XStringSet class into a data.frame
 #' @param AAS_align Multiple alignment object

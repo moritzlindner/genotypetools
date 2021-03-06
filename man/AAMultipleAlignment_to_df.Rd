@@ -2,7 +2,7 @@
 % Please edit documentation in R/AAMultipleAlignment_to_df.R
 \name{AAMultipleAlignment_to_df}
 \alias{AAMultipleAlignment_to_df}
-\title{AAMultipleAlignment_to_df}
+\title{AAMultipleAlignment_to_df (TESTING)}
 \usage{
 AAMultipleAlignment_to_df(AAS_align)
 }

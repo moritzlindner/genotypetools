@@ -2,14 +2,18 @@
 % Please edit documentation in R/Ab1Plot.R
 \name{Ab1Plot}
 \alias{Ab1Plot}
-\title{OverlapAnalysis}
+\title{Ab1Plot (TESTING)}
 \usage{
-Ab1Plot(file = "15.4I.ab1", range, ratio = NULL)
+Ab1Plot(file = "15.4I.ab1", range, ROI = NULL, ROIfill = "blue", size = 0.1)
 }
 \arguments{
 \item{file}{path to Ab1 file}
 
 \item{range}{limits of range to print ab1 plot}
+
+\item{ROIfill}{ROI fill colour}
+
+\item{ROIs}{Object of type GRranges with ROI(s)}
 }
 \description{
 Make Ab1 plot

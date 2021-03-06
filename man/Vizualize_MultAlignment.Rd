@@ -2,10 +2,16 @@
 % Please edit documentation in R/Vizualize_MultAlignment.R
 \name{Vizualize_MultAlignment}
 \alias{Vizualize_MultAlignment}
-\title{Export Function}
+\title{Vizualize_MultAlignment (TESTING)}
 \usage{
-Vizualize_MultAlignment(AAS, restrict_to = FALSE, restrict_by,
-  sortbyIdentity = TRUE, DistanceMatrix = NULL, ROI = NULL)
+Vizualize_MultAlignment(
+  AAS,
+  restrict_to = FALSE,
+  restrict_by,
+  sortbyIdentity = TRUE,
+  DistanceMatrix = NULL,
+  ROI = NULL
+)
 }
 \arguments{
 \item{AAS}{AAStringSet containing sequences to align}

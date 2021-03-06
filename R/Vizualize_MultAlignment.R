@@ -1,4 +1,4 @@
-#' Export Function
+#' Vizualize_MultAlignment (TESTING)
 #'
 #' Converts Multiple Alignments object to data.frame
 #' @param AAS AAStringSet containing sequences to align
@@ -6,17 +6,16 @@
 #' @param sortbyIdentity if restrict_to="Sequence", order by similarity to the Sequence named in restrict_by
 #' @param DistanceMatrix if restrict_to="Sequence", optional 2x lengh of Sequene named in restrict_by matrix arranging the x position of the reads. useful for plotting alongside ab1 grahps
 #' @param ROI Range of pos values. If given, marks region on plot in the defined range.
-#' @import reshape
+#' @importFrom reshape melt
 #' @import ggplot2
-#' @import ggpubr
-#' @import msa
-#' @import methods
+#' @importFrom ggpubr theme_transparent
+#' @importFrom msa msa
+#' @importFrom IRanges IRanges
 #' @import IRanges
 #' @return ggplot2 showing aligned sequences
 #' @export
 Vizualize_MultAlignment<-function(AAS,restrict_to=FALSE,restrict_by,sortbyIdentity=TRUE,DistanceMatrix=NULL,ROI=NULL){
-  AAS<-msa::msa(AAS)
- # require(msa)
+  AAS<-msa(AAS)
   AAS<-DNAMultipleAlignment(AAS)
   #AAS<-methods::as(AAS,"DNAMultipleAlignment")
   AAS<-DNAMultipleAlignment_to_df(AAS)
@@ -40,12 +39,12 @@ Vizualize_MultAlignment<-function(AAS,restrict_to=FALSE,restrict_by,sortbyIdenti
     rownames(ident)<-rownames(AAS)
   }
 
-  AAS<-reshape::melt(AAS)
+  AAS<-melt(AAS)
   colnames(AAS)<-c("Var1","Var2","value")
 
 
   if(isTRUE(sortbyIdentity) & restrict_to=="Sequence"){
-    ident<-reshape::melt(ident)
+    ident<-melt(ident)
     AAS<-cbind(AAS,ident$value)
     AAS$Var1 <- factor(AAS$Var1, levels = ord)
     colnames(AAS)[4]<-"ident"
@@ -60,20 +59,22 @@ Vizualize_MultAlignment<-function(AAS,restrict_to=FALSE,restrict_by,sortbyIdenti
   alignplot<-ggplot2::ggplot(AAS[AAS$Var2 & AAS$Var2,],ggplot2::aes(x=pos,y=Var1,label=value))+
     ggplot2::geom_text(size=8/ggplot2:::.pt)+
     ggplot2::scale_fill_manual(values=c("white","gray70"))+
-    ggpubr::theme_transparent()+
+    theme_transparent()+
     ggplot2::scale_x_discrete(position = "top") +
     ggplot2::xlab("Sequence")+
-    ggplot2::theme(legend.position = "none",axis.text = ggplot2::element_text(size=8),axis.text.x = ggplot2::element_blank(),axis.title = ggplot2::element_text(size=8),axis.title.y = ggplot2::element_blank())
+    ggplot2::theme(legend.position = "none",axis.text = ggplot2::element_text(size=ggplot2::theme_get()$text$size),axis.text.x = ggplot2::element_blank(),axis.title = ggplot2::element_text(size=8),axis.title.y = ggplot2::element_blank())
 
   #add ROI
   if (!is.null(ROI) & restrict_to=="Sequence"){
     if (is.null(DistanceMatrix)){
-      alignplot<-addROItoGraph(alignplot,IRanges::IRanges(unique(AAS$pos[AAS$Var2==ROI[1]])+0.5,unique(AAS$pos[AAS$Var2==ROI[2]])))
+      alignplot<-addROItoGraph(alignplot,IRanges(unique(AAS$pos[AAS$Var2==ROI[1]])+0.5,unique(AAS$pos[AAS$Var2==ROI[2]])))
     } else{
-      alignplot<-addROItoGraph(alignplot,IRanges::IRanges(unique(AAS$pos[AAS$Var2==ROI[1]])-0.5,unique(AAS$pos[AAS$Var2==ROI[2]]+0.5)))
+      alignplot<-addROItoGraph(alignplot,IRanges(unique(AAS$pos[AAS$Var2==ROI[1]])-0.5,unique(AAS$pos[AAS$Var2==ROI[2]]+0.5)))
     }
   }
-
+  if (!is.null(ROI) & restrict_to=="Range"){
+    alignplot<-addROItoGraph(alignplot,IRanges(unique(AAS$pos[AAS$Var2==ROI[1]])-0.5,unique(AAS$pos[AAS$Var2==ROI[2]]+0.5)))
+  }
   # highlight Regions
   if(restrict_to=="Sequence"){
     mark<-levels(AAS$Var1)[levels(AAS$Var1)!=restrict_by]

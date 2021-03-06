@@ -2,7 +2,7 @@
 % Please edit documentation in R/addROItoGraph.R
 \name{addROItoGraph}
 \alias{addROItoGraph}
-\title{addROItoGraph}
+\title{addROItoGraph (TESTING)}
 \usage{
 addROItoGraph(plot, ROIs, ROIfill = "blue")
 }
