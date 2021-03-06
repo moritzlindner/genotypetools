@@ -1,4 +1,4 @@
-# sgtR
+# genotypetools
 ### A package to accelerate interpretaition of sanger sequencing based genotyping results
 
 ## Installation
