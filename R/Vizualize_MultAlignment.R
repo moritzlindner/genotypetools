@@ -11,7 +11,6 @@
 #' @importFrom ggpubr theme_transparent
 #' @importFrom msa msa
 #' @importFrom IRanges IRanges
-#' @import IRanges
 #' @return ggplot2 showing aligned sequences
 #' @export
 Vizualize_MultAlignment<-function(AAS,restrict_to=FALSE,restrict_by,sortbyIdentity=TRUE,DistanceMatrix=NULL,ROI=NULL){
