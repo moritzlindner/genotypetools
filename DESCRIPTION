@@ -10,5 +10,14 @@ LazyData: true
 biocViews:
 Imports: 
     sangerseqR,
-    stringr,
+    stringr::str_detect,
+    stringr::str_extract,
+    Biostrings,
+    ggplot2,
+    tidyr,
+    grid::convertHeight,
+    BiocGenerics::as.data.frame,
+    ggpubr::theme_transparent,
+    msa::msa,
+    IRanges::IRanges
 RoxygenNote: 7.1.1
